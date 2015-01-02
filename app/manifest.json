@@ -1,0 +1,55 @@
+{
+    "name": "__MSG_appName__",
+    "version": "0.0.4",
+    "manifest_version": 2,
+    "description": "__MSG_appDescription__",
+    "icons": {
+        "16": "images/icon-16.png",
+        "128": "images/icon-128.png"
+    },
+    "default_locale": "en",
+    "omnibox": {
+        "keyword": "pl"
+    },
+    "background": {
+        "scripts": [
+            "scripts/chromereload.js",
+            "bower_components/jquery/dist/jquery.js",
+            "scripts/browserified/background.js"
+        ]
+    },
+    "browser_action": {
+        "default_icon": {
+            "16": "images/icon-16.png",
+            "19": "images/icon-19.png",
+            "38": "images/icon-38.png"
+        },
+        "default_title": "pList",
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "http://*/*",
+                "https://*/*"
+            ],
+            "css": [
+                "styles/main.css"
+            ],
+            "js": [
+                "bower_components/jquery/dist/jquery.js",
+                "scripts/browserified/contentutil.js",
+                "scripts/browserified/stackoverflow.js",
+                "scripts/browserified/content.js"
+            ],
+            "run_at": "document_end",
+            "all_frames": false
+        }
+    ],
+    "permissions": [
+        "contextMenus",
+        "tabs",
+        "http://*/*",
+        "https://*/*"
+    ]
+}

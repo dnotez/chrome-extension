@@ -1,4 +1,14 @@
-chrome-extension
+Chrome Extension
 ================
 
-dNotez chrome extension
+Development
+========
+run
+```
+grunt debug
+```
+
+
+
+Release
+=======
