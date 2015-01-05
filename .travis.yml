@@ -4,6 +4,8 @@ node_js:
 before_install:
   - npm install -g grunt-cli
 install:
+  - gem install sass --version "=3.2.12"
+  - gem install compass --version "=0.12.2"
   - npm install
 before_script:
   - grunt build
