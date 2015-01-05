@@ -1,5 +1,5 @@
 {
-  "name": "plist",
+  "name": "dNotez",
   "private": true,
   "dependencies": {
     "chai": "~1.8.0",

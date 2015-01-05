@@ -16,6 +16,8 @@ module.exports = function (grunt) {
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
 
+  grunt.loadNpmTasks('grunt-contrib-compass');
+
   // Configurable paths
   var config = {
     app: 'app',
@@ -201,21 +203,6 @@ module.exports = function (grunt) {
       test: {}
     },
 
-    //replacement for compass
-    sass:{
-      options:{
-        sourceMap: true,
-        outputStyle: 'compressed'
-      },
-      chrome:{
-        files:{
-          '<%= config.dist %>/styles': '<%= config.app %>/styles'
-        }
-      },
-      dist:{},
-      test:{}
-    },
-
     // Automatically inject Bower components into the HTML file
     bowerInstall: {
       app: {
@@ -344,20 +331,17 @@ module.exports = function (grunt) {
     concurrent: {
       chrome: [
         'coffee:chrome',
-        //'compass:chrome',
-        'sass:chrome',
+        'compass:chrome',
       ],
       dist: [
         'coffee:dist',
-        //'compass:dist',
-        'sass:dist',
+        'compass:dist',
         'imagemin',
         'svgmin'
       ],
       test: [
         'coffee:test',
-        //'compass:test',
-        'sass:test',
+        'compass:test',
       ]
     },
 
@@ -378,7 +362,7 @@ module.exports = function (grunt) {
       }
     },
 
-    // Compres dist files to package
+    // Compress dist files to package
     compress: {
       dist: {
         options: {

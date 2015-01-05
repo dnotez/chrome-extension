@@ -1,3 +1,3 @@
 'use strict';
 
-console.log('pList popup')
+console.log('dNotez popup')

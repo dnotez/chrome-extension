@@ -1,9 +1,9 @@
 'use strict';
-#for communication with pList server
+#for communication with dNotez server
 
 Api = {}
 
-BASE = 'http://localhost:5050'
+BASE = 'http://54.76.13.156'
 apiPath = (section) -> BASE + section
 
 submitData = (path, url, title, body, successCallback, errorCallback) ->
@@ -14,10 +14,12 @@ submitData = (path, url, title, body, successCallback, errorCallback) ->
       url: url
       title: title
       body: body
-    success: (response, textStatus, jqXhr) ->
+    success: (response) -> #textStatus, jqXhr
       successCallback response
+      return
     error: (jqXhr, status, error) ->
       errorCallback error, status
+      return
 
 Api.saveArticle = (data, successCallback, errorCallback) ->
   path = apiPath('/extension/sof/answer')
@@ -38,11 +40,13 @@ Api.suggestion = (text, successCallback, errorCallback) ->
     dataType: 'json'
     data: JSON.stringify
       query: text
-    success: (response, textStatus, jqXhr) ->
+    success: (response) -> #textStatus, jqXhr
       successCallback response
+      return
     error: (jqXhr, status, error) ->
       console.log status, error
       errorCallback error, status
+      return
 
 Api.articleUrl = (id) ->
   return BASE + '/extension/redirect/' + id

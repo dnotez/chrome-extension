@@ -1,10 +1,10 @@
 {
   "appName": {
-    "message": "pList",
-    "description": "The name of the application"
+    "message": "dNotez",
+    "description": "Saving articles, answers and code snippets easier"
   },
   "appDescription": {
-    "message": "pushLists chrome extension",
-    "description": "The description of the application"
+    "message": "dNotez chrome extension",
+    "description": "This extension allows you to save any pages (full page, or selected text), Stackoverflow answer or any other code snippet. You can search it or search them by typing 'dz' in the chrome search box"
   }
 }

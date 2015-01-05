@@ -1,6 +1,6 @@
 {
     "name": "__MSG_appName__",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "manifest_version": 2,
     "description": "__MSG_appDescription__",
     "icons": {
@@ -9,8 +9,9 @@
     },
     "default_locale": "en",
     "omnibox": {
-        "keyword": "pl"
+        "keyword": "dz"
     },
+    "options_page": "options.html",
     "background": {
         "scripts": [
             "scripts/chromereload.js",
@@ -24,7 +25,7 @@
             "19": "images/icon-19.png",
             "38": "images/icon-38.png"
         },
-        "default_title": "pList",
+        "default_title": "dNotez",
         "default_popup": "popup.html"
     },
     "content_scripts": [
