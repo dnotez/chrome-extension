@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 Msg = require('./msg')
 SOF = require('./stackoverflow')
 
@@ -31,4 +31,4 @@ for site in SITES
     port.postMessage({type: 'SUPPORTED_SITE', data: {site: site}})
 
     if (site == SITES[1])
-      SOF.addMarkup(port);
+      SOF.addMarkup(port)

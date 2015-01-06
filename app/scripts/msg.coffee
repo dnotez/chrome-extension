@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 # message types used in content and background
 Msg = {}
 

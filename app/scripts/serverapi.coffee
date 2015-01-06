@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 #for communication with dNotez server
 
 Api = {}
