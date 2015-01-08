@@ -32,6 +32,7 @@ describe('background page', function() {
       page.evaluate(function() {
         // then
         sinon.assert.calledOnce(chrome.runtime.onInstalled.addListener);
+        sinon.assert.calledOnce(chrome.runtime.onConnect.addListener);
         //title, `save page` an `save selection`
         sinon.assert.calledThrice(chrome.contextMenus.create);
         sinon.assert.calledOnce(chrome.omnibox.onInputChanged.addListener);
