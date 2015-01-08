@@ -7,9 +7,8 @@ ContextMenu = require('./context-menu')
 
 chrome.runtime.onInstalled.addListener (details) ->
   console.log('previousVersion', details)
+  return
 
-  Suggestion.install API
-  ContextMenu.createMenu API
 
 #submit article to server using server api
 submitArticle = (data, port) ->
@@ -25,7 +24,7 @@ submitArticle = (data, port) ->
 updateBadge = (data, port) ->
   chrome.browserAction.setBadgeText({text: data.site.charAt(0)})
   port.postMessage({type: 'BADGE_UPDATED', data: data})
-
+  return
 
 chrome.runtime.onConnect.addListener (port) ->
   console.log('content port opened:', port)
@@ -40,3 +39,6 @@ chrome.runtime.onConnect.addListener (port) ->
           console.log 'unsupported type:' + msg.type
     return
   return
+
+Suggestion.install API
+ContextMenu.createMenu API
