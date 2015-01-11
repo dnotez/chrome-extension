@@ -14,7 +14,6 @@
     "options_page": "options.html",
     "background": {
         "scripts": [
-            "scripts/chromereload.js",
             "scripts/jquery.js",
             "scripts/background.js"
         ]

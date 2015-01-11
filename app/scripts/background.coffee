@@ -27,7 +27,6 @@ updateBadge = (data, port) ->
   return
 
 chrome.runtime.onConnect.addListener (port) ->
-  console.log('content port opened:', port)
   chrome.browserAction.setBadgeText({text: ''})
   port.onMessage.addListener (msg) ->
     if (msg and msg.type)
