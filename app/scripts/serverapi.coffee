@@ -3,7 +3,14 @@
 
 Api = {}
 
-BASE = 'http://54.76.13.156'
+BASE = 'http://localhost:5050'
+
+chrome.storage.sync.get({
+  serverIP: 'localhost:5050'
+}, (items) ->
+  BASE = 'http://'+items.serverIP
+  return
+)
 apiPath = (section) -> BASE + section
 
 submitData = (path, url, title, body, successCallback, errorCallback) ->

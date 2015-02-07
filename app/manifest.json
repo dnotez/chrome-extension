@@ -11,7 +11,10 @@
     "omnibox": {
         "keyword": "dz"
     },
-    "options_page": "options.html",
+    "options_ui": {
+      "page": "options.html",
+      "chrome_style": true
+    },
     "background": {
         "scripts": [
             "scripts/jquery.js",
@@ -48,6 +51,7 @@
     ],
     "permissions": [
         "contextMenus",
+        "storage",
         "tabs",
         "http://*/*",
         "https://*/*"
