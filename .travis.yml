@@ -3,8 +3,10 @@ node_js:
   - "0.10"
 before_install:
   - gem install --no-rdoc --no-ri compass
-  - npm install -g grunt-cli
 install:
   - npm install
 before_script:
-  - grunt build
+  - gulp clean
+script:
+  - gulp
+  - phantomjs test/extension/run.js
