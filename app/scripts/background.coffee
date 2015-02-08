@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 API = require('./serverapi')
 Msg = require('./msg')
@@ -7,9 +7,8 @@ ContextMenu = require('./context-menu')
 
 chrome.runtime.onInstalled.addListener (details) ->
   console.log('previousVersion', details)
+  return
 
-  Suggestion.install API
-  ContextMenu.createMenu API
 
 #submit article to server using server api
 submitArticle = (data, port) ->
@@ -25,10 +24,9 @@ submitArticle = (data, port) ->
 updateBadge = (data, port) ->
   chrome.browserAction.setBadgeText({text: data.site.charAt(0)})
   port.postMessage({type: 'BADGE_UPDATED', data: data})
-
+  return
 
 chrome.runtime.onConnect.addListener (port) ->
-  console.log('content port opened:', port)
   chrome.browserAction.setBadgeText({text: ''})
   port.onMessage.addListener (msg) ->
     if (msg and msg.type)
@@ -40,3 +38,6 @@ chrome.runtime.onConnect.addListener (port) ->
           console.log 'unsupported type:' + msg.type
     return
   return
+
+Suggestion.install API
+ContextMenu.createMenu API

@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 ContextMenu = {}
 
@@ -12,7 +12,7 @@ ContextMenu = {}
 
 ContextMenu.createMenu = (API) ->
   parent = chrome.contextMenus.create
-    'title': 'PushLists'
+    'title': 'dNotez'
     'contexts':['page', 'selection']
 
   successCallback = (response) ->

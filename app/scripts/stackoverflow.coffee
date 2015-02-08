@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 Utils = require('./contentutil')
 
@@ -35,7 +35,7 @@ SOF.addMarkup = (port) ->
   $('.answer').each(eachCallback)
 
 #this is called when answer successfully saved
-SOF.answerSaved = (data) ->
+SOF.answerSavedSuccessfully = (data) ->
   #find save button
   saveBtn = $('#' + saveBtnId(data.answerId))
   saveBtn.text('Saved')
